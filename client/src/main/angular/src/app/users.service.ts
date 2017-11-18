@@ -9,7 +9,7 @@ import 'rxjs/add/operator/switchMap';
 @Injectable()
 export class UsersService {
 
-  baseUrl: string = 'users';
+  baseUrl: string = '/api/users';
 
   constructor(private http: Http) { }
 
