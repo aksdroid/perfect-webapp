@@ -2,10 +2,12 @@
 <div style="text-align: center">
 	<h1>Welcome to {{title}}!</h1>
 </div>
-<h2>List Of Users</h2>
-
-<table>
-	<tr>
+<ngb-alert [dismissible]="false" type="info">
+    List Of Users
+</ngb-alert>
+<div class="table-responsive">
+<table class="table table-hover table-striped">
+	<tr class="success">
 		<th>Id</th>
 		<th>First Name</th>
 		<th>Last Name</th>
@@ -16,3 +18,4 @@
 		<td>{{ result.lastName }}</td>
 	</tr>
 </table>
+</div>
