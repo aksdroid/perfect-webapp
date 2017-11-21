@@ -27,6 +27,7 @@
 	 <modules>
         <module>client</module>
         <module>server</module>
+		<module>gatling-load-test</module>
     </modules>
 
 </project>

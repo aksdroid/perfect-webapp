@@ -7,6 +7,12 @@
   <artifactId>gatling-load-test</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
+  <parent>
+        <groupId>org.aksdroid.play</groupId>
+		<artifactId>perfect-webapp</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+	
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
