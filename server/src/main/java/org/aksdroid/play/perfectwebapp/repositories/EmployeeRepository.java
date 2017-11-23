@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
-	@Query("SELECT er.id.relatedEmployeeId FROM Employee e , EmployeeRelation er WHERE e.employeeId=:employeeId AND er.id.employeeId=:employeeId")
-	public List<Integer> findRelatedEmployees(@Param("employeeId") Integer employeeId);
+	@Query("SELECT er.id.relatedEmployee FROM Employee e , EmployeeRelation er WHERE e.employeeId=:employeeId AND er.id.employeeId=e.employeeId")
+	public List<Employee> findRelatedEmployees(@Param("employeeId") Integer employeeId);
 
 }

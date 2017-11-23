@@ -3,13 +3,19 @@ package org.aksdroid.play.perfectwebapp.entities;
 import java.io.Serializable;
 
 import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Embeddable
 public class EmployeeRelationPK implements Serializable {
 
+	private static final long serialVersionUID = 2511054453294293138L;
+
 	private Integer employeeId;
 
-	private Integer relatedEmployeeId;
+	@OneToOne
+	@JoinColumn(name = "relatedEmployeeId", referencedColumnName = "employeeId")
+	private Employee relatedEmployee;
 
 	public Integer getEmployeeId() {
 		return employeeId;
@@ -19,12 +25,12 @@ public class EmployeeRelationPK implements Serializable {
 		this.employeeId = employeeId;
 	}
 
-	public Integer getRelatedEmployeeId() {
-		return relatedEmployeeId;
+	public Employee getRelatedEmployee() {
+		return relatedEmployee;
 	}
 
-	public void setRelatedEmployeeId(Integer relatedEmployeeId) {
-		this.relatedEmployeeId = relatedEmployeeId;
+	public void setRelatedEmployee(Employee relatedEmployee) {
+		this.relatedEmployee = relatedEmployee;
 	}
 
 }

@@ -12,7 +12,7 @@ public class EmployeeService {
 	@Autowired
 	EmployeeRepository employeeRepository;
 
-	public List<Integer> findRelatedEmployees(Integer employeeId) {
+	public List<Employee> findRelatedEmployees(Integer employeeId) {
 		return employeeRepository.findRelatedEmployees(employeeId);
 	}
 

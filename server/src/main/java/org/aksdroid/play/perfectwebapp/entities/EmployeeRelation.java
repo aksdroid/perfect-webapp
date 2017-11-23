@@ -23,4 +23,11 @@ public class EmployeeRelation {
 		this.relationType = relationType;
 	}
 
+	public EmployeeRelationPK getId() {
+		return id;
+	}
+
+	public void setId(EmployeeRelationPK id) {
+		this.id = id;
+	}
 }

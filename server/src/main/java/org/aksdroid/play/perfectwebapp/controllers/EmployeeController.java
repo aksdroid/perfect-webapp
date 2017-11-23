@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
@@ -35,7 +34,7 @@ public class EmployeeController {
 
 	@ApiOperation(value = "Find all Related Employees", produces = "application/json")
 	@RequestMapping(value = "/employees/{employeeId}/related", method = RequestMethod.GET)
-	public List<Integer> findRelatedEmployees(@PathVariable(name = "employeeId") Integer employeeId) {
+	public List<Employee> findRelatedEmployees(@PathVariable(name = "employeeId") Integer employeeId) {
 		logger.debug("findAll Related Employees");
 		return employeeService.findRelatedEmployees(employeeId);
 	}
