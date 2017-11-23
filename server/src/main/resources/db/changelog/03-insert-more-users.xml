@@ -6,7 +6,12 @@
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-  <include file="changelog/01-create-users-schema.xml" relativeToChangelogFile="true"/>
-  <include file="changelog/02-insert-users.xml" relativeToChangelogFile="true"/>
-  <include file="changelog/03-insert-more-users.xml" relativeToChangelogFile="true"/>
+  <changeSet id="02" author="aksdroid">
+    <comment>Inserting more Users</comment>
+	<loadData 
+            encoding="UTF-8"
+            file="db/data/more_users.csv"
+            tableName="users">
+    </loadData>
+  </changeSet>
 </databaseChangeLog>
