@@ -1,0 +1,7 @@
+employee_id,related_employee_id,relation_type
+1,2,LM
+1,3,PM
+2,3,LM
+2,4,PM
+2,5,LM
+3,6,LM

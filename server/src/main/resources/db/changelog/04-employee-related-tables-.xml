@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+	<changeSet id="04" author="aksdroid">
+
+		<createTable tableName="employee">
+			<column name="employee_id" type="int">
+				<constraints nullable="false" unique="true" primaryKey="true" />
+			</column>
+			<column name="first_name" type="varchar(255)" />
+			<column name="last_name" type="varchar(255)" />
+		</createTable>
+
+		<createTable tableName="employee_relation">
+			<column name="employee_id" type="int">
+				<constraints nullable="false" foreignKeyName="fk_employee"
+					references="employee(employee_id)" />
+			</column>
+			<column name="related_employee_id" type="int">
+				<constraints nullable="false" foreignKeyName="fk_related_employee"
+					references="employee(employee_id)" />
+			</column>
+			<column name="relation_type" type="varchar(255)" />
+		</createTable>
+
+		<addPrimaryKey columnNames="employee_id, related_employee_id"
+			constraintName="pk_employee_relation" tableName="employee_relation" />
+
+
+		<loadData encoding="UTF-8" file="db/data/employees.csv"
+			tableName="employee" />
+
+		<loadData encoding="UTF-8" file="db/data/relations.csv"
+			tableName="employee_relation" />
+	</changeSet>
+</databaseChangeLog>
